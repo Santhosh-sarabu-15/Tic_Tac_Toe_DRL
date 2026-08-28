@@ -1,0 +1,34 @@
+# Tic-Tac-Toe Strategy Knowledge Base
+
+## 1. Winning Moves (Immediate Win Completion)
+If a player has two marks in a line (row, column, or diagonal) with the third cell empty, the player must immediately play in the empty cell to complete the line and win the game. This takes highest priority over all other tactical considerations.
+
+## 2. Blocking Immediate Threats (Defensive Threat Negation)
+If the opponent has two consecutive marks in any row, column, or diagonal and the third cell is empty, the player must immediately play in that empty cell to block the opponent from winning on their next turn.
+
+## 3. Center Control (Middle Cell Priority)
+The center cell (index 4) is the most valuable position on a 3x3 Tic-Tac-Toe board because it participates in four potential winning lines (two diagonals, middle row, and middle column). Controlling the center provides maximum strategic flexibility and defense.
+
+## 4. Corner Strategy (High-Flexibility Positions)
+The four corner cells (indices 0, 2, 6, and 8) participate in three potential winning lines each. Occupying corners in the early game establishes strong offensive fork opportunities and restricts the opponent's counterplay options.
+
+## 5. Edge Strategy (Secondary Support Cells)
+The four edge cells (indices 1, 3, 5, and 7) participate in two winning lines each. Edges are typically secondary moves used to complete lines or block opponent corner combinations and fork setups.
+
+## 6. Opening Strategy (First Move Optimization)
+Optimal opening play requires taking either the center cell or a corner cell. Playing a corner or center forces the opponent to respond precisely to avoid falling into a forced loss.
+
+## 7. Defensive Strategy (Threat Prevention & Parity)
+Defensive play prioritizes negating opponent threats before attempting speculative attacks. When playing second (as O), maintaining strict parity and blocking opponent line alignment ensures a forced draw.
+
+## 8. Endgame Strategy (Forced Draws and Line Completion)
+In the endgame, as empty cells decrease, search trees shrink. Players must calculate exact line completions, ensuring no open threats remain while taking any available winning cell.
+
+## 9. Creating Forks (Double Threat Generation)
+A fork occurs when a move creates two distinct 2-in-a-row threats simultaneously. Because the opponent can only block one threat per turn, creating a fork guarantees a win on the subsequent move.
+
+## 10. Blocking Opponent Forks (Anti-Fork Defense)
+If the opponent is preparing a fork (such as controlling two opposite corners), the player must play a forcing move that compels the opponent to defend rather than complete their fork setup.
+
+## 11. Double Threats (Forced Multi-Line Offense)
+Creating double threats forces the opponent into defensive responses. Aligning marks across intersecting rows and diagonals maximizes Q-value expectations and limits opponent tactical counter-attacks.
